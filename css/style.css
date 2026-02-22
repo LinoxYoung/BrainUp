@@ -1,0 +1,188 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+/* ===== TEMA CLARO ===== */
+:root {
+  --bg: #ffffff;
+  --card: #f2f2f2;
+  --text: #111111;
+  --soft-text: #555555;
+  --border: #e0e0e0;
+  --button-bg: #111111;
+  --button-text: #ffffff;
+  --shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ===== TEMA ESCURO ===== */
+.dark {
+  --bg: #000000;
+  --card: #121212;
+  --text: #ffffff;
+  --soft-text: #aaaaaa;
+  --border: #1f1f1f;
+  --button-bg: #ffffff;
+  --button-text: #000000;
+  --shadow: 0 8px 25px rgba(255,255,255,0.08);
+}
+
+/* ===== APP ===== */
+.app {
+  max-width: 480px;
+  margin: auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ===== TELAS ===== */
+.screen {
+  display: none;
+  background: var(--card);
+  border-radius: 22px;
+  padding: 25px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  animation: fadeIn 0.3s ease;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MASCOTE ===== */
+.mascot {
+  width: 120px;
+  margin: 0 auto 15px;
+  display: block;
+  animation: float 4s ease-in-out infinite;
+  filter: grayscale(100%);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===== TÍTULOS ===== */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ===== TOP INFO ===== */
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: var(--soft-text);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+/* ===== PERGUNTA ===== */
+.question {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* ===== BOTÕES ===== */
+button {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  background: var(--button-bg);
+  color: var(--button-text);
+}
+
+/* Hover invertido elegante */
+button:hover {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--text);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ===== BOTÕES DE RESPOSTA ===== */
+#answers button {
+  background: transparent;
+  color: var(--text);
+}
+
+#answers button:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* ===== FEEDBACK ===== */
+.feedback {
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.explanation {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--soft-text);
+  line-height: 1.4;
+}
+
+/* ===== SETTINGS ===== */
+label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  font-size: 15px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 400px) {
+  .screen {
+    padding: 18px;
+  }
+
+  .question {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
