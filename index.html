@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrainUp</title>
+  <link rel="icon" type="image/png" href="assets/images/mascot.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+</head>
+<body>
+
+<div id="loadingScreen">
+  <h1>Loading...</h1>
+  <img src="assets/images/mascot.png" id="loadingMascot">
+</div>
+
+<div class="app">
+
+  <!-- MENU -->
+  <div id="menu" class="screen active">
+    <img src="assets/images/mascot.png" class="mascot">
+    <h1>BrainUp</h1>
+
+    <button onclick="startNormal()">Modo Normal</button>
+    <button onclick="startDaily()">Pergunta do Dia</button>
+    <button onclick="openSettings()">Configurações</button>
+  </div>
+
+  <!-- GAME -->
+  <div id="game" class="screen">
+    <div class="top">
+      <div>❤️ <span id="lives">3</span></div>
+      <div>⭐ <span id="xp">0</span></div>
+      <div>🔥 <span id="streak">0</span></div>
+    </div>
+
+    <div class="question" id="question"></div>
+    <div id="answers"></div>
+    <div class="feedback" id="feedback"></div>
+    <div class="explanation" id="explanation"></div>
+
+    <button onclick="playClick(); goMenu()">Voltar</button>
+  </div>
+
+  <!-- SETTINGS -->
+  <div id="settings" class="screen">
+    <h2>Configurações</h2>
+
+    <label>
+      Tema Escuro
+      <input type="checkbox" id="themeToggle">
+    </label>
+
+    <label>
+      Desativar Som
+      <input type="checkbox" id="soundToggle">
+    </label>
+
+    <button onclick="goMenu()">Voltar</button>
+  </div>
+
+</div>
+
+<script src="js/questions.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
